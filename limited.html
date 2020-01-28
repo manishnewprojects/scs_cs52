@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Limited</title>
+  </head>
+
+  <body>
+  	<p> Lorem upsum dolor sit amet. </p>
+	  	<script>
+
+		 function carlPoem(){
+		 	alert("Ready for Carl's poem?");
+		 	var poem = poemAssembler();
+ 		 	document.open();
+		 	document.write("<h1>'Limited' by Carl Sandburg<h1>");
+		 	document.write('<h6>Source: <a href="http://carl-sandburg.com/limited.htm">http://carl-sandburg.com/limited.htm</a></h6>')
+		 	document.write("<p>" +poem+ "</p>");
+
+		 	document.write("<h2> Nicer printout -1(for) </h2>");
+
+		 	for (i=0; i< poem.length; i++) {
+		 		document.write("<p>"+ poem[i] + "</p>");
+		 	}
+
+			document.write("<h2> Nicer printout -1(while) </h2>");
+
+			var i=0;
+			while (i < poem.length) {
+				document.write("<p>"+ poem[i] + "</p>");
+				i++;
+			}
+		 	 
+			document.write("<h2> Random printout </h2>");
+
+			var randomArrayIndex;
+			 
+			var attempt =0;
+			var matching =0;
+
+			while (matching < 4) {
+
+				matching=0;
+				attempt++;
+
+
+				for (i=0; i < poem.length; i++) {
+					randomArrayIndex = Math.floor(Math.random() * poem.length);
+
+					if (randomArrayIndex == i) {
+						matching++;
+					}
+
+					document.write("<p>" + poem[randomArrayIndex] + "</p>");
+					
+					
+				}
+
+				document.write("<hr>");
+			}
+
+
+			document.write("yeah, we got a match after ", attempt, " tries");
+
+
+		 	document.close();
+		 }
+
+		 function poemAssembler(){
+		 	var limited = ['I AM riding on a limited express, one of the crack trains of the nation.', 
+		 		' Hurtling across the prairie into blue haze and dark air go fifteen all-steel coaches holding a thousand people.',
+		 		' (All the coaches shall be scrap and rust and all the men and women laughing in the diners and sleepers shall pass to ashes.)',
+		 		' I ask a man in the smoker where he is going and he answers: "Omaha."'];
+		 	return limited;
+		 }
+
+  		window.onload = carlPoem;
+  		</script>
+
+	</body>
+</html>
